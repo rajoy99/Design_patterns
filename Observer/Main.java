@@ -1,4 +1,7 @@
 // Driver Class
+
+import java.util.Iterator;
+
 class Main
 {
     public static void main(String args[])
@@ -6,21 +9,27 @@ class Main
         // create objects for testing
         AvgScoreDisplay averageScoreDisplay =
                           new AvgScoreDisplay();
-        // CurrentScoreDisplay currentScoreDisplay =
-        //                   new CurrentScoreDisplay();
+        MidScoreDisplay midscoredisplay = new MidScoreDisplay();
   
         // pass the displays to Cricket data
         CricketData cricketData = new CricketData();
   
         // register display elements
         cricketData.registerObserver(averageScoreDisplay);
-        // cricketData.registerObserver(currentScoreDisplay);
+        cricketData.registerObserver(midscoredisplay);
+
+        averageScoreDisplay.display();
+        midscoredisplay.display();
   
         // in real app you would have some logic to
         // call this function when data changes
         cricketData.dataChanged();
   
         //remove an observer
+        averageScoreDisplay.display();
+        midscoredisplay.display();
+  
+        
         cricketData.unregisterObserver(averageScoreDisplay);
   
         // now only currentScoreDisplay gets the

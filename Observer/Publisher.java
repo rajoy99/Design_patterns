@@ -1,11 +1,11 @@
 public interface Publisher {
 
 
-    public void addObserver(Observer observer);
+    public void registerObserver(Observer observer);
 
-    public void removeObserver(Observer observer);
+    public void unregisterObserver(Observer observer);
 
-    public void notifyall();
+    public void notifyObservers();
 
 
 }
