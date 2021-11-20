@@ -12,10 +12,11 @@ public class Main {
 
         rctrl.buttonPress();
 
+        Soundbox beats = new Soundbox();
 
+        rctrl.setCommand(new SboxOnCommand(beats));
 
-
-
+        rctrl.buttonPress();
 
     }
 
